@@ -1,18 +1,17 @@
 package com.company;
 
-public class Order {
-    public int price;
-    public int size;
-    public BookOrderType type;
+import com.company.enums.BookOrderType;
 
-    public Order(int price, Integer size, BookOrderType type) {
-        this.price = price;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+public class Order {
+    @Setter private int size;
+    private final BookOrderType type;
+
+    public Order(int size, BookOrderType type) {
         this.size = size;
         this.type = type;
-    }
-
-    @Override
-    public String toString() {
-        return price + "," + size;
     }
 }
