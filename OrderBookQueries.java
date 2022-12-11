@@ -35,6 +35,7 @@ public class OrderBookQueries {
         orderBook.update(Integer.parseInt(operands[1]),
                 new Order(Integer.parseInt(operands[2]), BookOrderType.valueOf(operands[3].toUpperCase())));
     }
+
     private static Optional<String> query(OrderBook orderBook, String[] operands) {
         switch (operands[1]) {
             case "best_bid" -> {
@@ -51,6 +52,7 @@ public class OrderBookQueries {
         }
         return Optional.empty();
     }
+
     private static void marketOrder(OrderBook orderBook, String[] operands) {
         orderBook.executeMarketOrder(Integer.parseInt(operands[2]), MarketOrderType.valueOf(operands[1].toUpperCase()));
     }
